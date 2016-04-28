@@ -36,4 +36,10 @@ public class BitfinexHmacPostBodyDigest extends BaseParamsDigest {
 
     return String.format("%096x", new BigInteger(1, mac.doFinal()));
   }
+  
+  public String digestParams(String postBody) {
+    Mac mac = getMac();
+    mac.update(postBody.getBytes());
+    return String.format("%096x", new BigInteger(1, mac.doFinal()));
+  }
 }

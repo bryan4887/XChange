@@ -43,7 +43,7 @@ public class CoinbaseExAdapters {
 
   }
 
-  private static Date parseDate(String rawDate) {
+  public static Date parseDate(String rawDate) {
     try {
       return dateFormat.parse(rawDate.substring(0, 23));
     } catch (ParseException e) {
